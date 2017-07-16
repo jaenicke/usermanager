@@ -70,12 +70,12 @@ begin
         Users := XMLDoc.documentElement.selectNodes('users/*');
         for i := 0 to Users.length - 1 do
         begin
+          GetMem(ui3, sizeof(TUserInfo3));
+          ZeroMemory(ui3, sizeof(TUserInfo3));
+          UserNode := Users.item[i].selectSingleNode('@value');
+          ui3.usri3_name := PWideChar(UserNode.text);
+          User := TUser.Create(FComputer, ui3);
           try
-            GetMem(ui3, sizeof(TUserInfo3));
-            ZeroMemory(ui3, sizeof(TUserInfo3));
-            UserNode := Users.item[i].selectSingleNode('@value');
-            ui3.usri3_name := PWideChar(UserNode.text);
-            User := TUser.Create(FComputer, ui3);
             UserNode := Users.item[i].selectSingleNode('properties/password');
             User.Password := UserNode.text;
             User.Add;

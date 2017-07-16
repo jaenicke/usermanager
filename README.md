@@ -4,7 +4,7 @@ Man kann mit dem Usermanager auch lokale Benutzerkonten auf remote Computer im N
 
 ![Screenshot](https://user-images.githubusercontent.com/8652602/28248141-bb7f84c6-6a3f-11e7-9546-de5839681536.jpg)
 
-# Unterstütze Betriebssysteme
+# Unterstützte Betriebssysteme
 - Windows NT 4.0, vermutlich, nicht getestet.
 - Windows 2000
 - Windows XP (32-Bit), Windows XP Home wird nicht remote unterstützt.
@@ -30,3 +30,8 @@ Man kann mit dem Usermanager auch lokale Benutzerkonten auf remote Computer im N
 - Export der Benutzer von und Import von Benutzer aus einer XML-Dateien neu
 - Modernere Icons neu
 - Ausführliche kontextsensitive Hilfe
+
+# Unterstützte Delphiversionen
+- Delphi 6 bis Delphi 10.2 Tokyo
+  Sollte es beim Öffnen des Projekts einen Fehler geben, bitte einfach
+  alle Dateien Usermanager.* bis auf die Usermanager.dpr löschen!

@@ -988,12 +988,18 @@ begin
 end;
 
 function LSAUnicodeStringToStr(const lsaStr: TLSAUnicodeString): string;
+{$IFNDEF UNICODE}
 var
   len               : Integer;
+{$ENDIF}
 begin
+{$IFDEF UNICODE}
+  Result := lsaStr.Buffer;
+{$ELSE}
   len := lsaStr.Length div sizeof(WideChar);
   SetLength(result, len);
   WideCharToMultiByte(CP_ACP, 0, lsaStr.Buffer, len, PChar(result), len, nil, nil);
+{$ENDIF}
 end;
 
 const

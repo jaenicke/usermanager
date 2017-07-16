@@ -305,7 +305,7 @@ begin
         for i := 0 to User.Groups.Count - 1 do
         begin
           lvfi.psz := PWideChar(User.Groups.Items[i].GetCaption);
-          idx := SendDlgItemMessageW(hTabDlgs[3], ID_LV_USERGROUPS, LVM_FINDITEMW, -1, LPARAM(@lvfi));
+          idx := SendDlgItemMessageW(hTabDlgs[3], ID_LV_USERGROUPS, LVM_FINDITEMW, NativeUInt(-1), LPARAM(@lvfi));
           if idx > -1 then
             ListView_SetCheckState(GetDlgItem(hTabDlgs[3], ID_LV_USERGROUPS), idx, True);
         end;
@@ -837,9 +837,6 @@ var
 
   Filename          : WideString;
 
-  HelpFilename      : WideString;
-  Url               : string;
-
   hTVItem           : HTREEITEM;
 
 begin
@@ -1131,14 +1128,14 @@ begin
             ID_MNU_CHOOSE_COMP:
               begin
                 CurCompData := GetMemory(SizeOf(TcurCompData));
-                CurCompData.Computer := CurComputer;
+                CurCompData.Computer := AnsiString(CurComputer);
                 CurCompData.ParentHandle := hDlg;
 
                 ret := DialogBoxParam(HInstance, MAKEINTRESOURCE(200), hDlg, @ChooseCompDlgFunc, Integer(CurCompData));
                 if PSelCmpData(ret)^.Success then // erfolgreich verbunden
                 begin
                   ResetDetails;
-                  CurComputer := PSelCmpData(ret)^.Computer;
+                  CurComputer := string(PSelCmpData(ret)^.Computer);
 
                   ErrorCode := GetServerCommentW(CurComputer, s1);
                   if ErrorCode = 0 then // genug Berechtigungen für getServerComment vorhanden -> für Rest dann auch

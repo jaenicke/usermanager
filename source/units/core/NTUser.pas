@@ -484,7 +484,7 @@ begin
           KEY_WRITE);
         if ret = 0 then
         begin
-          ret := DeleteValueName('DefaultPassword');
+          DeleteValueName('DefaultPassword');
           ret := WriteString('AutoAdminLogon', '0');
         end;
       end;

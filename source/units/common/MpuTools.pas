@@ -142,12 +142,13 @@ var
   ti                : TToolInfo;
 
 {$IFDEF CONDITIONALEXPRESSIONS}
-{$IF Defined(TOSVersionInfoEx)}
+{$if CompilerVersion >= 20}
+ // Delphi 2009 oder höher
 {$DEFINE TOSVERSIONINFOEX_DEFINED}
 {$IFEND}
 {$ENDIF}
 {$IFNDEF TOSVERSIONINFOEX_DEFINED}
-
+     
 type
   POSVersionInfoEx = ^TOSVersionInfoEx;
   TOSVersionInfoEx = packed record
@@ -163,6 +164,7 @@ type
     wProductType: Byte;
     wReserved: Byte;
   end;
+{$ENDIF} // TOSVERSIONINFOEX_DEFINED
 
 const
   VER_SERVER_NT     = $80000000;
@@ -203,8 +205,6 @@ const
 {$EXTERNALSYM VER_NT_DOMAIN_CONTROLLER}
   VER_NT_SERVER     = $0000003;
 {$EXTERNALSYM VER_NT_SERVER}
-
-{$ENDIF} // TOSVERSIONINFOEX_DEFINED
 
 function StrToInt(s: string): Int64;
 function StrToFloat(s: string): Extended;
@@ -639,7 +639,7 @@ end;
 //             and returns a formated date string
 function UnixTimeToDateString(i: PDWORD): string;
 var
-  umt               : int64;
+  umt               : DWORD;
   st                : TSystemTime;
   ft                : TFileTime;
   li                : ULARGE_INTEGER;

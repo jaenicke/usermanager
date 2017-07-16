@@ -30,7 +30,9 @@ function BringToFrontEx(AWnd: HWND): Boolean;
 
 procedure DisplayErrorMsg(hParent: THandle; ErrorCode: Integer; Msg, Caption: WideString);
 procedure DisplayExceptionMsg(hParent: THandle; ErrorCode: Integer; Msg, Caption: String); overload;
+{$IFNDEF UNICODE}
 procedure DisplayExceptionMsg(hParent: THandle; ErrorCode: Integer; Msg, Caption: WideString); overload;
+{$ENDIF}
 
 procedure ListBoxAddString(Handle: Integer; ID: Integer; const s: string);
 procedure SetDlgBtnCheck(Handle: THandle; ID: Integer; bCheck: Boolean);
@@ -170,6 +172,7 @@ begin
   MessageBox(hParent, PChar(s), PChar(Caption), MB_ICONSTOP or MB_APPLMODAL);
 end;
 
+{$IFNDEF UNICODE}
 procedure DisplayExceptionMsg(hParent: THandle; ErrorCode: Integer; Msg, Caption: WideString);
 var
   s: String;
@@ -180,6 +183,7 @@ begin
   s := Format(rsErrorMsgTemplate, [ErrorCode, Msg]);
   MessageBoxW(hParent, PWideChar(WideString(s)), PWideChar(WideString(Caption)), MB_ICONSTOP or MB_APPLMODAL);
 end;
+{$ENDIF}
 
 procedure SetItemTextW(Handle: THandle; ID: Integer; const Text: WideString);
 begin

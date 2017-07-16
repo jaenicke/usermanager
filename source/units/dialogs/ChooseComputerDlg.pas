@@ -91,7 +91,7 @@ begin
         SetWindowPos(hDlg, 0, x, y, 0, 0, SWP_NOSIZE);
         SetWindowPos(GetDlgItem(hDlg, 299), 0, 0, 0, 305, 2, SWP_NOMOVE or SWP_SHOWWINDOW);
 
-        CurComputer := PCurCompData(lparam)^.Computer;
+        CurComputer := string(PCurCompData(lparam)^.Computer);
 
         FreeMemory(PCurCompData(lparam));
 
@@ -225,7 +225,7 @@ begin
                 if ret = 0 then
                 begin
                   SelCmpData := GetMemory(sizeof(TSelCmpData));
-                  SelCmpData.Computer := Computer;
+                  SelCmpData.Computer := AnsiString(Computer);
                   SelCmpData.Success := True;
                   EndDialog(hDlg, Integer(SelCmpData));
                 end

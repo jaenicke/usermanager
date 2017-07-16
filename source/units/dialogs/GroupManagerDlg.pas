@@ -28,6 +28,13 @@ uses
 function groupmandlgproc(hDlg: HWND; uMsg: UINT; wParam: WPARAM; lParam: LPARAM): bool; stdcall;
 
 type
+{$IFDEF CONDITIONALEXPRESSIONS}
+{$if CompilerVersion < 18}
+ // Delphi 2005 und früher
+  NativeUInt = Integer;
+{$IFEND}
+{$ENDIF}
+
   TInfo = packed record
     hParent: THandle;
     CurComputer: WideString;
@@ -314,7 +321,7 @@ begin
               end;
             ID_BTN_APPLYPRV:
               begin
-                Group := GetLVItemText(hDlg, ID_LV_GROUPS, SendDlgItemMessage(hDlg, ID_LV_GROUPS, LVM_GETNEXTITEM, -1,
+                Group := GetLVItemText(hDlg, ID_LV_GROUPS, SendDlgItemMessage(hDlg, ID_LV_GROUPS, LVM_GETNEXTITEM, NativeUInt(-1),
                   LVNI_FOCUSED));
                 for i := 0 to SendDlgItemMessage(hDlg, ID_LV_PRIVILEGES, LVM_GETITEMCOUNT, 0, 0) - 1 do
                 begin
@@ -337,7 +344,7 @@ begin
                 ListView_SetCheckState(GetDlgItem(hDlg, ID_LV_PRIVILEGES), -1, False);
                 ZeroMemory(@lvi, sizeof(lvi));
                 lvi.mask := LVIF_TEXT or LVIF_PARAM;
-                lvi.iItem := SendDlgItemMessage(hDlg, ID_LV_GROUPS, LVM_GETNEXTITEM, -1, LVNI_FOCUSED);
+                lvi.iItem := SendDlgItemMessage(hDlg, ID_LV_GROUPS, LVM_GETNEXTITEM, NativeUInt(-1), LVNI_FOCUSED);
                 ListView_GetItemW(GetDlgItem(hDlg, ID_LV_GROUPS), lvi);
                 Privileges := TPrivilegeCollection(lvi.lParam);
                 ZeroMemory(@lvfi, sizeof(lvfi));

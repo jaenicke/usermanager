@@ -694,7 +694,11 @@ type
       dwData: DWORD): HWND; stdcall;
     THtmlHelpW = function (hwndCaller: HWND; pszFile: PWideChar; uCommand: UINT;
       dwData: DWORD): HWND; stdcall;
+{$IFDEF UNICODE}
+    THtmlHelp = THtmlHelpW;
+{$ELSE}
     THtmlHelp = THtmlHelpA;
+{$ENDIF}
 
   var
     HtmlHelpA: THtmlHelpA = nil;
