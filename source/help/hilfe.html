@@ -1,0 +1,573 @@
+<html>
+  <!--
+
+    Project    : XP Usermanager
+
+    File       : HTML Hilfedatei
+    Date       : 2012-01-04
+    Version    : 1.3
+
+    Copyright (c) Michael Puff
+
+    http://www.michael-puff.de
+    mail@michael-puff.de
+
+  -->
+  <head>
+    <title>XP Usermanager Hilfedatei</title>
+    <style type="text/css">
+      <!--
+        body {
+          text-align: left;
+          font-family: Arial, Sans-Serif;
+          font-size: 80%;
+          color: black;
+          background-color: white;
+        }
+
+        p {
+          width: 800px;
+          text-align: justify;
+          margin-left: 25px;
+        }
+        
+        pre {
+          margin-left: 25px;
+        }
+
+        hr {
+          width: 825px;
+        }
+  
+        table {
+          border-width: 1px;
+          border-style: solid;
+          border-collapse: collapse;
+          border-color: gray;
+          font-size: 90%;
+          margin-left: 25px;
+        }
+        
+        table.help {
+          width: 800px;
+        }
+
+        th {
+          text-align: left;
+          background-color: silver;
+          border-width: 1px;
+          border-style: solid;
+          padding: 3px;
+          font-weight: bold;
+        }
+
+        th.menu {
+          width: 150px;
+        }
+
+        th.sc {
+          width: 75px;
+        }
+
+        td {
+          padding: 3px;
+          border-width: 1px;
+          border-style: solid;
+          text-align: left;
+          vertical-align: top;
+        }
+
+        h1, h2, h3, h4 {
+          margin-bottom: 0px;
+        }
+      -->
+    </style>
+
+
+  </head>
+  <body>
+    <h1>XP Usermanager Hilfe</h1><hr><br>
+    <table>
+      <tr><td>Programm:</td><td>XP Usermanager</td></tr>
+      <tr><td>Programmversion:</td><td>6.0</td></tr>
+      <tr><td>Hilfeversion:</td><td>1.2</td></tr>
+      <tr><td>Datum:</td><td>2012-01-04</td></tr>
+      <tr><td>Copyright:</td><td>Michael Puff</td></tr>
+      <tr><td>E-Mail:</td><td><a href="mailto:mail@michael-puff.de">mail@michael-puff.de</a></td></tr>
+      <tr><td>Homepage:</td><td><a href="http://www.michael-puff.de">http://www.michael-puff.de</a></td></tr>
+      <tr><td>Programmhomepage:</td><td><a href="http://www.xpusermanager.de">http://www.xpusermanager.de</a></td></tr>
+    </table>
+
+    <br><br><h2>Inhalt</h2><hr>
+    <pre><font face="Arial"><a href="#1"><strong>1 Die Programmoberfläche</strong></a>
+  <a href="#1.1">1.1 Das Menü</a>
+    <a href="#1.1.1">1.1.1 Datei</a>
+    <a href="#1.1.2">1.1.2 Benutzer</a>
+    <a href="#1.1.3">1.1.3 Ansicht</a>
+    <a href="#1.1.4">1.1.4 Extras</a>
+    <a href="#1.1.5">1.1.5 Hilfe</a>
+ <a href="#1.2">1.2 Die Werkzeugleiste</a>
+ <a href="#1.3">1.3 Die Seitenreiter für die Kontoeinstellungen</a>
+    <a href="#1.3.1">1.3.1 Seitenreiter "Konto"</a>
+    <a href="#1.3.2">1.3.2 Seitenreiter "Einstellungen"</a>
+    <a href="#1.3.3">1.3.3 Seitenreiter "Login"</a>
+    <a href="#1.3.4">1.3.4 Seitenreiter "Gruppenzugehörigkeit"</a>
+ <a href="#1.4">1.4 Listenansicht "Kontoinformationen"</a><br>
+<a href="#2"><strong>2 Die Gruppenverwaltung</strong></a>
+  <a href="#2.1">2.1 Benutzergruppen Privilegien zuordnen</a>
+  <a href="#2.2">2.2 Benutzergruppen erstellen</a>
+  <a href="#2.3">2.3 Benutzergruppen löschen</a><br>
+<a href="#3"><strong>3 Mit Netzwerkcomputer verbinden</strong></a><br>
+<a href="#4"><strong>4 Installation</strong></a>
+  <a href="#4.1">4.1 Installation</a>
+  <a href="#4.2">4.2 Deinstallation</a><br>
+<a href="#5"><strong>5 Lizenz</strong></a>
+      </font>
+    </pre>
+
+    <a name="1"><h2>1 Die Programmoberfläche</h2><hr>
+
+    <a name="1.1"><br><br><h3>1.1 Das Menü</h3>
+    <a name="1.1.1"><h4>1.1.1 Datei</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Menüpunkt</th><th>Beschreibung</th><th class="sc">Shortcut</th>
+      </tr>
+      <tr>
+        <td>Computer wählen...</td><td>Ruft einen Dialog auf, um sich mit einem Computer im Netzwerk zu verbinden und so die
+      lokalen Konten des gewählten Netzwerkcomputers zu verwalten. Der Netzwerkcomputer lässt sich entweder direkt in dem Eingabefeld
+      angeben oder über einen Auswahldialog auswählen.
+      Als Login-Daten muss ein Administratorkonto und dessen Passwort auf dem Computer im Netzwerk angegeben werden.
+      Aufgrund der Einschränkungen von Windows XP Home, ist es nicht möglich die lokalen Benutzerkonten eines Windows XP Home Rechners mit dem <strong>
+      XP Usermanager</strong> remote zu verwalten.</td><td>[Strg]+[C]</td>
+      </tr>
+      <tr>
+        <td>Lokaler Computer</td><td>Wählt automatisch den lokalen Computer aus.</td><td>[Strg]+[L]</td>
+      </tr>
+      <tr>
+        <td>Beenden</td><td>Beendet den <strong>XP Usermanager</strong>.</td><td>[Alt]+[F4]</td>
+      </tr>
+    </table>
+
+
+    <a name="1.1.2"><h4>1.1.2 Benutzer</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Menüpunkt</th><th>Beschreibung</th><th class="sc">Shortcut</th>
+      </tr>
+      <tr>
+        <td>Neuer Benutzer</td>
+        <td>Es werden alle Eingabefelder gelöscht bzw. die Benutzerkontrollelemente auf ihr Standardwerte zurückgesetzt. Es wird kein neuer Benutzer
+          angelegt!</td>
+        <td>[Strg]+[N]</td>
+      </tr>
+      <tr>
+        <td>Speichern</td>
+        <td>Speichert die geänderten Einstellungen zu einem Benutzerkonto oder legt einen neuen Benutzer an.</td>
+        <td>[Strg]+[S]</td>
+      </tr>
+      <tr>
+        <td>Löschen</td>
+        <td>Löscht den aktuell ausgewählten Benutzer. Das Löschen eines Benutzerkontos ist nicht mehr rückgängig zu machen.</td>
+        <td>[Strg]+[Entf]</td>
+      </tr>
+    </table>
+    
+    <a name="1.1.3"><h4>1.1.3 Ansicht</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Menüpunkt</th><th>Beschreibung</th><th class="sc">Shortcut</th>
+      </tr>
+      <tr>
+        <td>Benutzer</td>
+        <td>Sortiert die Baumansicht mit den Benutzern und Gruppen nach den Benutzerkonten.</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Gruppen</td>
+        <td>Sortiert die Baumansicht mit den Benutzern und Gruppen nach den Benutzergruppen.</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Aufklappen</td>
+        <td>Stellt die Baumansicht der Benutzer und Gruppen mit aufgeklappten Knoten dar.</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Aktualisieren</td>
+        <td>Aktualisiert die Baumansicht mit den Benutzern und Gruppen.</td>
+        <td>[F5]</td>
+      </tr>
+    </table>
+
+    <a name="1.1.4"><h4>1.1.4 Extras</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Menüpunkt</th><th>Beschreibung</th><th class="sc">Shortcut</th>
+      </tr>
+      <tr>
+        <td>Gruppenmanager</td>
+        <td>Ruft den Gruppenmanager zur Verwaltung der Benutzergruppen auf.</td>
+        <td>[Strg]+[G]</td>
+      </tr>
+      <tr>
+        <td>Benutzer exportieren/CSV</td>
+        <td>Exportiert die Benutzer des Computers, ihre Kontoeinstellungen und ihre Gruppenzugehörigkeit  in eine CSV-Datei.</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Benutzer exportieren/XML</td>
+        <td>Exportiert die Benutzer eines Computers, ihre Kontoeinstellungen und ihre Gruppenzugehörigkeit in eine XML-Datei.</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Benutzer importieren/XML</td>
+        <td>Importiert Benutzerkonten aus einer XML-Datei.</td>
+        <td>-</td>
+      </tr>
+    </table>
+    
+    <a name="1.1.5"><h4>1.1.5 Hilfe</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Menüpunkt</th><th>Beschreibung</th><th class="sc">Shortcut</th>
+      </tr>
+      <tr>
+        <td>Hilfe</td>
+        <td>Ruft diese Hilfedatei auf.</td>
+        <td>[F1]</td>
+      </tr>
+      <tr>
+        <td>Über...</td>
+        <td>Ruft den Dialog mit Informationen zum Programm auf.</td>
+        <td>-</td>
+      </tr>
+    </table>
+
+    <a name="1.2"><br><br><h3>1.2 Die Werkzeugleiste</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Schaltfläche</th><th>Zugehöriger Menüpunkt</th><th class="sc">Shortcut</th>
+      </tr>
+      <tr>
+        <td><img src="choose_computer.bmp"></td>
+        <td>Computer wählen...</td>
+        <td>[Strg]+[C]</td>
+      </tr>
+      <tr>
+        <td><img src="new_user.bmp"></td>
+        <td>Neuer Benutzer</td>
+        <td>[Strg]+[N]</td>
+      </tr>
+      <tr>
+        <td><img src="save.bmp"></td>
+        <td>Speichern</td>
+        <td>[Strg]+[S]</td>
+      </tr>
+      <tr>
+        <td><img src="del.bmp"></td>
+        <td>Löschen</td>
+        <td>[Strg]+[Entf]</td>
+      </tr>
+      <tr>
+        <td><img src="groupmanager.bmp"></td>
+        <td>Gruppenmanager</td>
+        <td>[Strg]+[G]</td>
+      </tr>
+    </table>
+    
+    <a name="1.3"><br><br><h3>1.3 Die Seitenreiter für die Kontoeinstellungen</h3>
+    <a name="1.3.1"><h4>1.3.1 Seitenreiter "Konto"</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Kontrollelement</th><th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Benutzer</td>
+        <td>Name des Benutzers, entspricht dem Kontonamen. Wird kein vollständiger Name angegeben, erscheint dieser Name im Login-Bildschirm von
+          Windows XP.</td>
+      </tr>
+      <tr>
+        <td>vollständiger Name</td>
+        <td>Vollständiger Name des Benutzers. Wird ein vollständiger Name angegeben, erscheint dieser Name im Login-Bildschirm von Windows XP anstatt
+          des Kontonamens.</td>
+      </tr>
+      <tr>
+        <td>Beschreibung</td>
+        <td>Nähere Beschreibung des Kontos oder ein frei wählbarer Kommentar.</td>
+      </tr>
+      <tr>
+        <td>Kennwort</td>
+        <td>Kennwort für das Benutzerkonto, welches beim Einloggen eingegeben werden muss. Setzen Sie den Haken bei "zurücksetzen", wenn Sie das 
+          Kennwort zurücksetzen wollen.</td>
+      </tr>
+      <tr>
+        <td>zurücksetzen</td>
+        <td>Setzt das Kennwort zurück. Das Konto ist dann nicht mehr mit einem Kennwort geschützt.</td>
+      </tr>
+    </table>
+    
+    <a name="1.3.2"><h4>1.3.2 Seitenreiter "Einstellungen"</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Kontrollelement</th><th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Benutzer muss Kennwort bei nächster Anmeldung ändern</td>
+        <td>Bei der nächsten Anmeldung muss der Benutzer das Kennwort bei der Anmeldung ändern.</td>
+      </tr>
+      <tr>
+        <td>Benutzer kann Kennwort nicht ändern</td>
+        <td>Der Benutzer kann das Kennwort nicht selbst ändern.</td>
+      </tr>
+      <tr>
+        <td>Kennwort läuft nie ab</td>
+        <td>Das Kennwort läuft nicht ab und ist unbestimmte Zeit gültig.</td>
+      </tr>
+      <tr>
+        <td>Konto ist deaktiviert</td>
+        <td>Das Konto wurde vom Administrator gesperrt. Der Benutzer kann sich nicht mit seinem Konto anmelden</td>
+      </tr>
+      <tr>
+        <td>Stammverzeichnis</td>
+        <td>Stammverzeichnis des Benutzerkontos.</td>
+      </tr>
+      <tr>
+        <td>Anmeldeskript</td>
+        <td>Anmeldeskript für das Benutzerkonto, welches bei der Anmeldung ausgeführt wird.</td>
+      </tr>
+    </table>
+    
+    <a name="1.3.3"><h4>1.3.3 Seitenreiter "Login"</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Kontrollelement</th><th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Diesen Benutzer automatisch einloggen</td>
+        <td>Aktivieren Sie diese Checkbox, wenn der ausgewählte Benutzer automatisch beim Start von Windows angemeldet werden soll. Ist das Konto mit
+          einem Kennwort versehen, geben Sie es in das Eingabefeld "Kennwort" ein.</td>
+      </tr>
+      <tr>
+        <td>Konto im Anmeldebildschirm verstecken</td>
+        <td>Aktivieren Sie diese Checkbox, wenn das ausgewählte Konto nicht im Anmeldebildschirm von Windows ercheinen soll. Dies gilt nur für den
+          Anmeldebildschirm von Windows XP.</td>
+      </tr>
+    </table>
+    
+    <a name="1.3.4"><h4>1.3.4 Seitenreiter "Gruppenzugehörigkeit"</h4><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Kontrollelement</th><th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Gruppenzugehörigkeit</td>
+        <td>Liste der verfügbaren Benutzergruppen. Ist ein Haken vor einer Benutzergruppe gesetzt, so ist der ausgewählte Benutzer Mitglied dieser
+          Gruppe. Setzen oder entfernen Sie entsprechend die Häkchen, um einen Benutzer einer Benutzergruppe hinzuzufügen oder ihn aus einer zu
+          entfernen.</td>
+      </tr>
+    </table>
+
+    <a name="1.4"><br><br><h3>1.4 Listenansicht "Kontoinformationen"</h3><br>
+    <table class="help">
+      <tr>
+        <th class="menu">Parameter</th><th>Beschreibung</th>
+      </tr>
+      <tr>
+        <td>Passwortalter</td>
+        <td>Alter des Passwortes des Benutzerkontos.</td>
+      </tr>
+      <tr>
+        <td>Letzte Anmeldung</td>
+        <td>Datum und Uhrzeit der letzten Anmeldung.</td>
+      </tr>
+      <tr>
+        <td>Anmeldungen</td>
+        <td>Anzahl der Anmeldungen.</td>
+      </tr>
+      <tr>
+        <td>Konto läuft ab</td>
+        <td>Gibt an ob und wann das Benutzerkonto abläuft und sich der Benutzer nicht mehr anmelden kann.</td>
+      </tr>
+    </table>
+    
+    <a name="2"><br><br><h2>2 Die Gruppenverwaltung</h2><hr>
+    <a name="2.1"><h3>2.1 Benutzergruppen Privilegien zuordnen</h3>
+    <p>
+      Um einer Benutzergruppe Privilegien zu zuordnen, wählen Sie die entsprechende Benutzergruppe in der Listenansicht <i>Gruppe</i> aus und
+      aktivieren bzw. deaktivieren das gewünschte Privileg mit einem Haken vor dem jeweiligen Privileg. Klicken Sie anschließend auf die Schaltfläche
+      <i>Übermehmen</i>, um die zugeordneten Privilegien für diese Gruppe zu übernehmen.
+    </p>
+
+    <a name="2.2"><h3>2.2 Benutzergruppen erstellen</h3>
+    <p>
+      Wollen Sie eine neue Benutzergruppe erstellen, geben Sie in dem Texteingabefeld <i>Gruppenname</i> die gewünschte Bezeichung für die
+      Benutzergruppe ein, optional können Sie noch einen Kommentar in dem Texteingabefeld <i>Kommentar</i> eingeben, und klicken Sie dann auf
+      <i>Speichern</i>, um die neue Benutzergruppe anzulegen.
+    </p>
+
+    <a name="2.3"><h3>2.3 Benutzergruppen löschen</h3>
+    <p>
+      Eine Benutzergruppe kann gelöscht werden, in dem sie in der Listenansicht <i>Gruppe</i> ausgewählt wird und anschließend über die Schaltfläche
+      <i>Löschen</i> gelöscht wird. Eine einmal gelöschte Benutzergruppe lässt sich nicht wiederherstellen.
+    </p>
+
+  <a name="3"><h2>3 Mit Netzwerkcomputer verbinden</h2><hr>
+  <p>
+    Der XP Usermanager bietet die Möglichkeit auch andere NT Maschinen* im Netzwerk lokal zu administrieren. Um sich mit einem Remotecomputer zu 
+    verbinden, rufen Sie den Dialog "Mit Netzwerkrechner verbinden" über den Menüpunkt "Computer wählen..." auf.
+  </p>
+
+  <table class="help">
+    <tr><th>Steuerelement</th><th>Funktion</th></tr>
+    <tr>
+      <td>Eingabefeld <i>Computer</i></td><td>Name oder IP-Adresse des Remotecomputers.</td>
+    </tr>
+    <tr>
+      <td>Schaltfläche <i>Netzwerk</i></td><td>Ruft einen Dialog auf, um einem Computer im Netzwerk auszuwählen.</td>
+    </tr>
+    <tr>
+      <td>Eingabefeld <i>Benutzername<i></td><td>Benutzername eines Administrators auf dem Remotecomputer</td>
+    </tr>
+    <tr>
+      <td>Kontrollkästchen <i>Speichern</i></td><td>Legt fest, ob der zu letzt ausgewählte Remotecomputer und der zu letzt eingegeben Benutzername in 
+      der Registry gespeichert werden sollen.</td>
+    </tr>
+    <tr>
+      <td>Eingabefeld <i>Passwort</i></td><td>Passwort für das Remotebenutzerkonto.</td>
+    </tr>
+    <tr>
+      <td>Schaltfläche <i>OK</i></td><td>Schliesst den Dialog und es wird versucht sich mit dem ausgewählten Computer zu verbinden.</td>
+    </tr>
+    <tr>
+      <td>Schaltfläche <i>Abbrechen</i></td><td>Schliesst den Dialog und bricht den Vorgang ab.</td>
+    </tr>
+  </table>
+  
+  <img src="divider.jpg">
+  <p>
+    <small>*) Getestet unter Windows 2000 und Windows XP Professional. Windows XP Home lässt eine Remotadministration aufgrund der eingeschränkten
+    Netzwerkunterstützung nicht zu.</small>
+  </p>
+
+  <a name="4"><h2>4 Installation</h2><hr>
+  <a name="4.1"><h3>4.1 Installation</h3>
+  <p>
+    Der XP Usermanager erfordert keine Installation. Die Dateien im Archiv können in ein beliebiges Verzeichnis entpackt werden. Das Programm
+    kann direkt von dort gestartet werden.
+  </p>
+
+  <a name="4.2"><h3>4.2 Deinstallation</h3>
+  <p>
+    Um den XP Usermanager zu deinstallieren, führen Sie einfach die Stapelverarbeitungsdatei <i>uninstall.bat</i> aus. Diese entfernt alle Einträge
+    für den Benutzer aus der Registry. Danach können sie einfach alle Programmdateien und den Programmordner löschen.
+  </p>
+
+  <a name="5"><h2>5 Lizenz</h2><hr>
+  <pre>1. Gegenstand des Vertrages
+  Gegenstand des Vertrages ist die beiligende Software, die
+  Programmbeschreibung und Bedienungsanleitung, sowie sonstiges zugehöriges
+  schriftliches Material, im folgenden auch als Software bezeichnet. Der Autor
+  macht darauf aufmerksam, dass es nach dem Stand der Technik nicht möglich ist,
+  Computersoftware so zu erstellen, dass sie in allen Anwendungen und
+  Kombinationen fehlerfrei arbeitet. Gegenstand des Vertrages ist daher nur
+  eine Software, die im Sinne der Programmbeschreibung und der
+  Benutzungsanleitung grundsätzlich brauchbar ist.
+
+2. Lizenzgewährung
+  Der Autor gewährt jedem interessierten Anwender eine ausschließliche, nicht
+  übertragbare und einmalige Testlizenz zur Installation der Software auf einem
+  beliebigen einzelnen Personalcomputer (sei es ein Einzelplatzcomputer oder
+  eine Workstation in einem Netzwerk) für einen Testzeitraum von 14
+  Nutzungstagen. Nach Ablauf dieser 14-Testtage-Lizenz muss der Anwender
+  entweder eine Vollversion erwerben oder die Software muss von dem
+  entsprechenden Personalcomputer entfernt werden.  Universitäten,
+  Fachhochschulen, allgemeinbildende und berufsbildende Schulen dürfen die
+  einmalig erworbene Einzelplatzlizenz auf alle ihre Personalcomputer übertragen,
+  soweit diese Personalcomputer Eigentum des Lizenznehmers sind und in Räumen
+  des Lizenznehmers betrieben werden.  Die Einzelplatzlizenz gilt ausschließlich
+  für die Software für die sie registriert wurde und ist zeitlich nicht begrenzt.
+  Die Einzelplatzlizenz gilt für alle Versionsnummern der Software jetzt und in
+  Zukunft für die entsprechende Lizenz (Standard, University oder Professional).
+  Der Lizenznehmer hat kein Recht auf Updateversorgung durch den Autor, da
+  hierzu die im Umlauf befindlichen Shareware-Versionen genutzt werden können.
+  Diese Dateien sind Shareware und dürfen so auch frei kopiert und weitergegeben
+  werden.  Als Updatekosten entstehen dem Lizenznehmer die Kosten für die
+  Beschaffung der Shareware-Version, die als Update genutzt werden kann/soll.
+  Dies sind z.B. die Kosten für Download (Telefongebühren, Onlinegebühren o.ä.)
+  oder die Kosten der Shareware-Version (Kopierkosten o.ä. bei einem Händler,
+  Kosten für eine Shareware-CD-ROM o.ä.). Die Kostenfreiheit des Updates für den
+  Lizenznehmer bezieht sich also nur auf die Gültigkeit der Lizenz für die neue
+  Version, nicht aber auf die Bereitstellung oder Beschaffung der Shareware-
+  Version, die als Update genutzt werden kann/soll.  Die Software kann frei
+  kopiert und weitergegeben werden (Shareware-Prinzip), soweit folgende
+  Bestimmungen beachtet werden:  Die Software darf nur in den vom Autor
+  erstellten EXE- oder ZIP-Archiven weitergegeben werden.  Keine Datei darf im
+  Inhalt irgendwie verändert werden.  Es muss bei der Weitergabe deutlich sein,
+  dass es sich um eine Shareware-Version, bzw. 14-Testtage-Vollversion handelt.
+  Es ist verboten, die Einzelplatzlizenz, bzw. die zur Einzelplatzlizenz
+  gehörigen Daten, zu verkaufen, zu vermieten, zu verschenken, zu verleihen,
+  sonstwie zu vertreiben oder bekannt zu machen oder Dritten Einsicht in die
+  Lizenzunterlagen zu gewähren.
+
+
+3. Keine weiteren Rechtsansprüche  
+  Der Autor ist sowohl Urheber als auch Eigentümer der Software, sowie in
+  dieser Software verwendeter Algorithmen und Verfahren. Dere Autor behält den
+  Rechts- und Besitzanspruch an der Software. Sie akzeptieren, dass die oben
+  gewährte Lizenz kein Verkauf der Software ist und das der oben aufgeführte
+  Vertrag Ihnen in Bezug auf die Software keinen Anspruch auf Patente,
+  Vervielfältigung, Branchengeheimnisse, Warenzeichen oder auf andere Rechte
+  gewährt.
+
+4. Keine Modifikationen oder Dekompilierung
+  ES IST VERBOTEN DIE SOFTWARE, DIE DOKUMENTATION ODER KOPIEN IM GANZEN ODER
+  TEILWEISE ZU VERÄNDERN, ZU ÜBERSETZEN, ZU DISASSEMBLIEREN ODER ZU
+  DEKOMPILIEREN.
+
+5. Haftungsausschluß-Erklärung
+  Soweit gesetzlich zulässig, haftet der Autor oder der Händler auf keinen Fall
+  für irgendwelche Schäden aus entgangenem Gewinn, Betriebsunterbrechung,
+  Datenverlust, für Schäden an Hardware oder anderer Schäden gleich welcher Art,
+  die aus der Benutzung dieser Software oder aus der Tatsache, dass sie nicht
+  benutzt werden kann, resultieren, selbst wenn der Autor oder der Händler auf
+  die Möglichkeit solcher Schäden hingewiesen oder unterrichtet wurden. In jedem
+  Fall ist die gesamte Haftung seitens des Autors oder des Händlers unter
+  jedweder Bestimmung begrenzt auf die Summe, die von Ihnen tatsächlich für
+  diese Softwarelizenz bezahlt worden ist. Der Autor haftet nicht für Schäden,
+  es sei denn, dass ein Schaden durch Vorsatz oder grobe Fahrlässigkeit seitens
+  des Autors verursacht worden ist. Gegenüber Kaufleuten wird auch die Haftung
+  für grobe Fahrlässigkeit ausgeschlossen. Eine Haftung wegen evtl. vom Autor
+  zugesicherten Eigenschaften bleibt unberührt. Eine Haftung für
+  Mangelfolgeschäden, die nicht von der Zusicherung umfasst sind, ist
+  ausgeschlossen.
+
+6. Gewährleistung
+  Der Autor übernimmt keine Haftung für die Fehlerfreiheit der Software.
+  Insbesondere übernimmt der Autor keine Gewähr dafür, dass die Software den
+  Anforderungen und Zwecken des Erwerbers genügt oder mit anderen von ihm
+  ausgewählten Programmen zusammenarbeitet. Die Verantwortung für die richtige
+  Auswahl und die Folgen der Benutzung der Software, sowie der damit
+  beabsichtigten oder erzielten Ergebnisse, trägt der Erwerber. Das gleiche gilt
+  für das die Software begleitende schriftliche Material.
+
+7. Gesetzesanwendung
+  Dieser Vertrag unterliegt der Gesetzgebung der Bundesrepublik Deutschland und
+  ist so anzuwenden, als ob die betreffenden Rechtsgeschäfte in der
+  Bundesrepublik Deutschland stattfänden.
+
+8. Auflagen
+  Der Autor hat das Recht, den Vertrag und die Lizenzrechte sofort zu kündigen,
+  falls Sie die Bestimmungen dieses Vertrages nicht erfüllen.
+
+9. Zusammenfassung
+  SIE NEHMEN ZUR KENNTNIS UND STIMMEN ZU, DASS SIE DIESEN VERTRAG GELESEN UND
+  VERSTANDEN HABEN UND DASS DIESES DER VOLLSTÄNDIGE VERTRAG ZWISCHEN IHNEN UND
+  Michael Puff IST, DER ALLE FRÜHEREN, ZWISCHEN IHNEN UND Michael Puff GETROFFENEN
+  ABMACHUNGEN, SEI ES IN SCHRIFTLICHER, MÜNDLICHER ODER ANDERER FORM, ERSETZT.</pre>
+  
+  <hr>
+  <small>Copyright &copy; 2007 Michael Puff</small>
+
+  </body>
+</html>

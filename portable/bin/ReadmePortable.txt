@@ -1,0 +1,1 @@
+Für die portable Nutzung kann dieses Verzeichnis benutzt werden. Es genügt die kompilierte Usermanager.exe hier abzulegen.

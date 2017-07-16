@@ -1,0 +1,13 @@
+[OPTIONS]
+Compatibility=1.0
+Compiled file=hilfe.chm
+Default topic=hilfe.html
+Display compile progress=Yes
+Language=0x407 Deutsch (Deutschland)
+
+
+[FILES]
+hilfe.html
+
+[INFOTYPES]
+
