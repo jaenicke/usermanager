@@ -1,6 +1,8 @@
 # XP Usermanager
-Der UserManager dient dazu Benutzerkonten auf NT ff. Maschinen anzulegen, zu löschen, Benutzer Gruppen zu zuordnen und deren Konten zu verwalten. All dies kann man auch mit der Windows internen Benutzerverwaltung, nur nicht so übersichtloch, wie ich denke.
+Der UserManager dient dazu Benutzerkonten auf NT ff. Maschinen anzulegen, zu löschen, Benutzer Gruppen zu zuordnen und deren Konten zu verwalten. All dies kann man auch mit der Windows internen Benutzerverwaltung, nur nicht so übersichtlich, wie ich denke.
 Man kann mit dem Usermanager auch lokale Benutzerkonten auf remote Computer im Netzwerk verwalten. Was allerdings nicht mit Windows XP Home funktioniert, da XP Home den remote Zugriff nicht gestattet.
+
+![Screenshot](https://user-images.githubusercontent.com/8652602/28248141-bb7f84c6-6a3f-11e7-9546-de5839681536.jpg)
 
 # Unterstütze Betriebssysteme
 - Windows NT 4.0, vermutlich, nicht getestet.
