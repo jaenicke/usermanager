@@ -18,7 +18,8 @@ unit Import;
 interface
 
 uses
-  Windows, MpuTools, List, NTUser, NetAPI, Exceptions, MSXML2_TLB_Light, ActiveX, Consts;
+  Windows, MpuTools, List, NTUser, NetAPI, Exceptions, MSXML2_TLB_Light, ActiveX, Consts,
+  SysUtils;
 
 {$I .\units\includes\ResStrings.inc}
 
@@ -41,6 +42,18 @@ begin
   FXMLFile := XMLFile;
 end;
 
+procedure WriteLog(const ALogFileHandle: THandle; const ALogText: string);
+const
+  ByteOrderMark : Word = $FEFF;
+var
+  LogFilesize: Int64;
+begin
+  Int64Rec(LogFilesize).Lo := Windows.GetFileSize(ALogFileHandle, @Int64Rec(LogFilesize).Hi);
+  if LogFilesize = 0 then
+    FileWrite(ALogFileHandle, ByteOrderMark, SizeOf(ByteOrderMark));
+  FileWrite(ALogFileHandle, ALogText[1], Length(ALogText) * SizeOf(Char));
+end;
+
 function TImport.Import: Boolean;
 var
   User: TUser;
@@ -53,19 +66,23 @@ var
   UserNode: IXMLDOMNode;
   i, j: Integer;
   hLogFile: THandle;
-  s: string;
-  ErrorSuccess: Boolean;
 begin
   CoInitialize(nil);
-  ErrorSuccess := True;
-  XMLDoc := CoDOMDocument40.Create;
+  Result := False;
 
   // Logging
   hLogFile := FileCreate(ExtractFilepath(ParamStr(0)) + LOGFILE);
   if (hLogFile <> 0) then
   begin
-    FileWrite(hLogFile, s[1], Length(s));
-    s := Format(rsLogfileImport, ['', FXMLFile]);
+    XMLDoc := CoDOMDocument60.Create;
+    if not Assigned(XMLDoc) then
+      XMLDoc := CoDOMDocument40.Create;
+    if not Assigned(XMLDoc) then
+    begin
+      WriteLog(hLogFile, rsXMLError);
+      Exit;
+    end;
+    WriteLog(hLogFile, Format(rsLogfileImport, ['', FXMLFile]));
     if XMLDoc.load(FXMLFile) then
     begin
       XMLNode := XMLDoc.selectSingleNode('xpusermanager');
@@ -110,29 +127,22 @@ begin
               GroupNode := Groups.item[j];
               User.AddGroup := GroupNode.text;
             end;
-            s := Format(rsLogfileOK + #13#10, [string(User.Name)]);
-            FileWrite(hLogFile, s[1], Length(s));
+            WriteLog(hLogFile, Format(rsLogfileOK + #13#10, [string(User.Name)]));
+            Result := True;
           except
             on E: Exception do
-            begin
-              ErrorSuccess := False;
-              s := Format(rsLogfileError + #13#10, [string(User.Name), string(E.Errorcode), string(E.Message)]);
-              FileWrite(hLogFile, s[1], Length(s));
-            end;
+              WriteLog(hLogFile, Format(rsLogfileError + #13#10, [string(User.Name), string(E.ClassName), string(E.Message)]));
           end;
         end;
       end
       else
-        raise Exception.CreateFmt(rsImpFileError, [FXMLFile]);
+        WriteLog(hLogFile, Format(rsImpFileError, [FXMLFile]));
     end
     else
-    begin
-      raise Exception.CreateFmt(rsImpXMLError, [FXMLFile]);
-    end;
+      WriteLog(hLogFile, Format(rsImpXMLError, [FXMLFile]));
     FileClose(hLogFile);
   end;
   CoUninitialize;
-  Result := ErrorSuccess;
 end;
 
 end.

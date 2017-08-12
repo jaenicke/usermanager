@@ -64,11 +64,12 @@ resourcestring
   rsErrorAddGroup   = 'Fehler - neue Gruppe anlegen';
   rsErrorDelGroup   = 'Fehler - Gruppe löschen';
 
-  rsImpFileError    = 'Die Datei %s ist keine gültige XP Usermanager Import-Datei.';
-  rsImpXMLError     = 'Die Datei %s ist keine gültig XML-Datei. Überprüfen Sie die Datei auf Fehler.';
-  rsLogfileImport   = 'Datum: %s' + #13#10 + 'Importdatei: %s';
+  rsXMLError        = 'Die XML Zugriffsbibliotheken konnten nicht initialisiert werden!' + #13#10;
+  rsImpFileError    = 'Die Datei %s ist keine gültige XP Usermanager Import-Datei.' + #13#10;
+  rsImpXMLError     = 'Die Datei %s ist keine gültig XML-Datei. Überprüfen Sie die Datei auf Fehler.' + #13#10;
+  rsLogfileImport   = 'Datum: %s' + #13#10 + 'Importdatei: %s' + #13#10;
   rsLogfileOK       = 'Konto: %s' + #13#10 + 'Status: OK' + #13#10;
-  rsLogfileError    = 'Konto: %s' + #13#10 + 'Status: [%d] %s' + #13#10;
+  rsLogfileError    = 'Konto: %s' + #13#10 + 'Status: %s: %s' + #13#10;
   rsImportError     = 'Es sind Fehler beim Import aufgetreten.' + #13#10 +
     'Die Logdatei wurde gespeichert unter %s' + #13#10 +
     'Wollen Sie die Logdatei jetzt betrachten?';
