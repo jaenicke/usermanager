@@ -329,11 +329,11 @@ end;
 function FormatW(const S: WideString; const Args: array of const): WideString;
 var
   StrBuffer2        : array[0..1023] of WideChar;
-  A                 : array[0..15] of LongWord;
+  A                 : array[0..15] of {$IFDEF Win64}PInt64{$ELSE}LongWord{$IFEND};
   i                 : Integer;
 begin
   for i := High(Args) downto 0 do
-    A[i] := Args[i].VInteger;
+    A[i] := Args[i].{$IFDEF Win64}VInt64{$ELSE}VInteger{$IFEND};
   wvsprintfW(@StrBuffer2, PWideChar(S), @A);
   Result := PWideChar(@StrBuffer2);
 end;
@@ -417,6 +417,11 @@ end;
 // Author    :
 // Comment   :
 function StrIComp(const Str1, Str2: PChar): Integer; assembler;
+{$IFDEF  WIN64}
+begin
+  Result := AnsiStrIComp(Str1, Str2);
+end;
+{$ELSE}
 asm
         PUSH    EDI
         PUSH    ESI
@@ -447,6 +452,7 @@ asm
 @@4:    POP     ESI
         POP     EDI
 end;
+{$ENDIF}
 
 ////////////////////////////////////////////////////////////////////////////////
 //  AnsiStrComp

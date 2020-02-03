@@ -132,13 +132,13 @@ type
   GROUP_INFO_0 = _GROUP_INFO_0;
 
 type
-  TSERVER_INFO_101 = packed record
-    sv101_platform_ID: DWORD;
-    sv101_name: PWChar;
+  TSERVER_INFO_101 = record
+    sv101_platform_id: DWORD;
+    sv101_name: LPWSTR;
     sv101_version_major: DWORD;
     sv101_version_minor: DWORD;
-    sv101_type: DWORD; // not yet defined here!
-    sv101_comment: PWChar;
+    sv101_type: DWORD;
+    sv101_comment: LPWSTR;
   end;
   PSERVER_INFO_101 = ^TSERVER_INFO_101;
 
@@ -180,9 +180,8 @@ function NetLocalGroupDel(servername: LPCWSTR; groupname: LPCWSTR): NET_API_STAT
 
 function NetWkstaGetInfo(const servername: PWChar; const level: DWord; const bufptr: Pointer): NET_API_STATUS; stdcall;
 
-function NetServerGetInfo(const servername: PWChar; level: DWORD; bufptr: Pointer): NET_API_STATUS; stdcall;
-
-function NetApiBufferFree(Buffer: Pointer): NET_API_STATUS; stdcall;
+function NetServerGetInfo(servername: LPWSTR; level: DWORD; var bufptr): NET_API_STATUS; stdcall;
+function NetApiBufferFree(Buffer: LPVOID): NET_API_STATUS; stdcall;
 
 implementation
 
@@ -219,7 +218,7 @@ function GetOS(const Computer: WideString): string;
 var
   res               : DWORD;
   s                 : string;
-  si                : Pointer;
+  si                : PSERVER_INFO_101;
   Major             : DWORD;
   Minor             : DWORD;
 resourcestring
@@ -227,11 +226,11 @@ resourcestring
 begin
   si := nil;
   s := '';
-  res := NetServerGetInfo(PWideChar(Computer), 101, @si);
+  res := NetServerGetInfo(PWideChar(Computer), 101, si);
   if res = NERR_Success then
   begin
-    Major := PSERVER_INFO_101(si)^.sv101_version_major;
-    Minor := PSERVER_INFO_101(si)^.sv101_version_minor;
+    Major := si.sv101_version_major;
+    Minor := si.sv101_version_minor;
     if (Major = 4) and (Minor = 0) then
     begin
       s := 'Windows NT 4.0';
@@ -266,17 +265,16 @@ end;
 
 function GetServerCommentW(const Computer: WideString; var Comment: WideString): DWORD;
 var
-  res               : DWORD;
-  si                : Pointer;
+  Buffer: PSERVER_INFO_101;
 begin
-  si := nil;
-  res := NetServerGetInfo(PWideChar(Computer), 101, @si);
-  if res = NERR_Success then
-  begin
-    comment := PSERVER_INFO_101(si)^.sv101_comment;
-  end;
-  NetApiBufferFree(si);
-  result := res;
+  Buffer := nil;
+  Result := NetServerGetInfo(PWideChar(Computer), 101, Buffer);
+  if Result = NERR_SUCCESS then
+    try
+      Comment := Buffer.sv101_comment;
+    finally
+      NetApiBufferFree(Buffer);
+    end;
 end;
 
 end.
