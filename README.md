@@ -4,7 +4,8 @@ Man kann mit dem Usermanager auch lokale Benutzerkonten auf remote Computer im N
 
 ![Screenshot](https://user-images.githubusercontent.com/8652602/28248141-bb7f84c6-6a3f-11e7-9546-de5839681536.jpg)
 
-Der Autor ist Michael Puff  http://www.michael-puff.de. Ich habe das Projekt mit seinem Einverständnis hier veröffentlicht.
+Der Autor ist Michael Puff. Ich habe das Projekt mit seinem Einverständnis hier veröffentlicht. Den Link zu seiner ehemaligen Webseite habe ich nun hier aufgrund des dreisten Kaperns der Domain für Werbezwecke entfernt. Seine Webseite ist dort nicht mehr erreichbar. Sie ist im Webarchiv noch zu finden:
+http://web.archive.org/web/20211215120725/http://michael-puff.de/
 
 # Unterstützte Betriebssysteme
 - Windows NT 4.0, vermutlich, nicht getestet.
