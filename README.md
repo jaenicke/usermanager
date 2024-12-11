@@ -1,10 +1,10 @@
-# XP Usermanager
+# XP Usermanager von Michael Puff
 Der UserManager dient dazu Benutzerkonten auf NT ff. Maschinen anzulegen, zu löschen, Benutzer Gruppen zu zuordnen und deren Konten zu verwalten. All dies kann man auch mit der Windows internen Benutzerverwaltung, nur nicht so übersichtlich, wie ich denke.
 Man kann mit dem Usermanager auch lokale Benutzerkonten auf remote Computer im Netzwerk verwalten. Was allerdings nicht mit Windows XP Home funktioniert, da XP Home den remote Zugriff nicht gestattet.
 
 ![Screenshot](https://user-images.githubusercontent.com/8652602/28248141-bb7f84c6-6a3f-11e7-9546-de5839681536.jpg)
 
-Der Autor ist Michael Puff. Ich habe das Projekt mit seinem Einverständnis hier veröffentlicht. Den Link zu seiner ehemaligen Webseite habe ich nun hier aufgrund des dreisten Kaperns der Domain für Werbezwecke entfernt. Seine Webseite ist dort nicht mehr erreichbar. Sie ist im Webarchiv noch zu finden:
+**Der Autor ist Michael Puff. Ich habe das Projekt mit seinem Einverständnis hier veröffentlicht. Den Link zu seiner ehemaligen Webseite habe ich nun hier aufgrund des dreisten Kaperns der Domain für Werbezwecke entfernt. Seine Webseite ist dort nicht mehr erreichbar. Sie ist im Webarchiv noch zu finden:**
 http://web.archive.org/web/20211215120725/http://michael-puff.de/
 
 # Unterstützte Betriebssysteme
